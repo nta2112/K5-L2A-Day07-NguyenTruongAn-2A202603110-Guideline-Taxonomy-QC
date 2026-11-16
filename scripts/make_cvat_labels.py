@@ -26,15 +26,23 @@ def main() -> None:
         attrs = []
         if name != tax.ignore:
             for a in tax.attrs.values():
+                default = str(a.get("default", ""))
+                if a["type"] == "select":
+                    values = [str(v) for v in a.get("values", [])]
+                else:
+                    # CVAT bản mới từ chối checkbox có values rỗng; giá trị là "true"/"false" theo default.
+                    default = default.lower() if default.lower() in ("true", "false") else "false"
+                    values = [default]
                 attrs.append({
                     "name": a["name"],
                     "mutable": False,
                     "input_type": a["type"],
-                    "default_value": str(a.get("default", "")),
-                    "values": [str(v) for v in a.get("values", [])] if a["type"] == "select" else [],
+                    "default_value": default,
+                    "values": values,
                 })
+        # CVAT bản mới bắt buộc trường "type"; lab chỉ vẽ bounding box nên dùng "rectangle".
         labels.append({"name": name, "color": "#808080" if name == tax.ignore else COLORS[i % len(COLORS)],
-                       "attributes": attrs})
+                       "type": "rectangle", "attributes": attrs})
     text = json.dumps(labels, ensure_ascii=False, indent=2)
     out = ROOT / "cvat" / ("labels_final.json" if args.final else "labels_generated.json")
     out.parent.mkdir(exist_ok=True)
