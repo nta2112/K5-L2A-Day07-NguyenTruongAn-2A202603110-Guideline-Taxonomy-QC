@@ -1,13 +1,13 @@
 {
-  "version": "v0",
+  "version": "v1.0",
   "ignore_class": "ignore_region",
   "classes": [
-    {"name": "car", "definition": "Ô tô con, SUV."},
-    {"name": "truck", "definition": "Xe tải, xe có thùng hàng riêng."},
-    {"name": "van", "definition": "Xe thùng kín cỡ nhỏ."},
-    {"name": "motorcycle", "definition": "Xe máy, mô tô."},
-    {"name": "person", "definition": "Người đi bộ hoặc người ngồi trên xe."},
-    {"name": "ignore_region", "definition": "Vùng bỏ qua (không phải vật): nơi không gán từng vật, bỏ sót ở đây không tính là lỗi."}
+    {"name": "car", "definition": "Ô tô con chở người từ 4 đến 9 chỗ (sedan, SUV, hatchback, wagon, crossover, taxi), khoang liền khối."},
+    {"name": "truck", "definition": "Xe tải chở hàng có thùng hàng riêng biệt, xe đầu kéo, xe chuyên dụng và xe bán tải (pickup)."},
+    {"name": "van", "definition": "Xe ô tô thân hộp kín một khối liền mạch giữa khoang lái và khoang chở hàng/chở khách (minivan, panel van)."},
+    {"name": "motorcycle", "definition": "Xe 2 bánh hoặc 3 bánh có động cơ (xe máy, xe tay ga, xe mô tô, sidecar). Không bao gồm người lái."},
+    {"name": "person", "definition": "Con người thật còn sống ở mọi tư thế: đi bộ, đứng, ngồi, lái xe. Không gán tượng, ma-nơ-canh, ảnh in."},
+    {"name": "ignore_region", "definition": "Vùng bỏ qua: cụm vật thể mục tiêu quá nhỏ (< 20px) hoặc đám đông không thể tách rời; bỏ sót ở đây không tính lỗi."}
   ],
   "attributes": [
     {"name": "occluded_level", "type": "select", "values": ["0", "1", "2", "3"], "default": "0"},
