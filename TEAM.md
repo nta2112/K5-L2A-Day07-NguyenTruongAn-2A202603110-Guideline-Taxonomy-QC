@@ -4,7 +4,7 @@
 - Mã thành viên (ba chữ số): 101, 102, 103, 104, 105
 - Người điều phối: 101
 - Người review bản cuối: 103
-- Commit chốt bài (điền ở kênh nộp sau khi commit): 
+- Commit chốt bài (điền ở kênh nộp sau khi commit): 1d68398
 
 ## Kết quả tóm tắt (điền cuối bài)
 
